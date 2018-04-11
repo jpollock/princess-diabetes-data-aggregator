@@ -1,0 +1,12 @@
+{
+  "name": "database-inserter",
+  "version": "1.0.0",
+  "description": "inserter of Dexcom data",
+  "main": "index.js",
+  "author": "Jeremy Pollock",
+  "license": "MIT",
+  "dependencies": {
+      "aws-sdk": "^2.222.1",
+      "mysql": "^2.15.0"
+  }
+}

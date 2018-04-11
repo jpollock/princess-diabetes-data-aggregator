@@ -9,5 +9,13 @@
     },
     "scripts": {
         "test": "mocha --recursive tests"
+    },
+    "dependencies": {
+        "aws-sdk": "^2.222.1",
+        "database-inserter": "file:local_modules/database-inserter",
+        "dexcom-fetcher": "file:local_modules/dexcom-fetcher",
+        "mysql": "^2.15.0",
+        "querystring": "^0.2.0",
+        "request": "^2.85.0"
     }
 }
