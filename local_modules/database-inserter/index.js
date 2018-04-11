@@ -41,10 +41,8 @@ module.exports = {
                 binarySecretData = data.SecretBinary;
             }
         }
-        console.log(data.SecretString);
         var parseSecurity = JSON.parse(data.SecretString);
-        console.log(parseSecurity.dbname);
-    
+        
         // Your code goes here. 
         var connection = mysql.createConnection({
           host     : parseSecurity.host,
@@ -66,13 +64,11 @@ module.exports = {
             var key = entry[0],
             value = entry[1];
             var eventText = JSON.stringify(value, null, 2);
-            console.log(key + " = " + value);
             var post  = {id: 1, title: 'Hello MySQL'};
             var query = connection.query('INSERT INTO cgm_readings_glucose SET ?', value, function (error, results, fields) {
               //if (error) throw error;
               // Neat!
             });
-            console.log(query.sql); // INSERT INTO posts SET `id` = 1, `title` = 'Hello MySQL'    connection.end();
 
         }
         connection.end();

@@ -61,6 +61,7 @@ function login_payload (opts) {
 // Login to Dexcom's server.
 function authorize (opts, then) {
   var url = Defaults.login;
+  console.log(url);
   var body = login_payload(opts);
   var headers = { 'User-Agent': Defaults.agent
                 , 'Content-Type': Defaults['content-type']
@@ -85,7 +86,6 @@ module.exports = {
     });
 
     client.getSecretValue({SecretId: secretName}, function(err, data) {
-        console.log(err);
         if(err) {
             if(err.code === 'ResourceNotFoundException')
                 console.log("The requested secret " + secretName + " was not found");
@@ -102,7 +102,7 @@ module.exports = {
 
         }
         else {
-            console.log(data);
+            
             // Decrypted secret using the associated KMS CMK
             // Depending on whether the secret was a string or binary, one of these fields will be populated
             if(data.SecretString !== "") {
