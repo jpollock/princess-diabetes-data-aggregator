@@ -85,7 +85,9 @@ module.exports = {
         region: region
     });
 
+    console.log("fetch:: about to get secret");
     client.getSecretValue({SecretId: secretName}, function(err, data) {
+        console.log(err);
         if(err) {
             if(err.code === 'ResourceNotFoundException')
                 console.log("The requested secret " + secretName + " was not found");
